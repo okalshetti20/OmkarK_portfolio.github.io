@@ -6,58 +6,55 @@
 </head>
 <body>
 
-<nav>
+<nav class="navbar">
     <h2>Omkar</h2>
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#achievements">Achievements</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <button onclick="toggleDarkMode()">🌙</button>
 </nav>
 
-<section id="home" class="section">
-    <img src="images/profile.jpg" class="profile">
+<section id="home" class="section reveal">
     <h1>Omkar Kalshetti</h1>
-    <p>Aspiring Full Stack Developer</p>
+    <p>Building modern web experiences</p>
 </section>
 
-<section id="about" class="section">
+<section id="about" class="section reveal">
     <h2>About Me</h2>
-    <p>I am a B.Tech student passionate about building websites and working on real-world projects.</p>
+    <p>B.Tech student passionate about development and creating impactful projects.</p>
 </section>
 
-<section id="achievements" class="section">
-    <h2>Achievements</h2>
-    <div class="card">Python Certification - Completed programming course</div>
-    <div class="card">Coding Competition - Participated and improved skills</div>
-</section>
-
-<section id="projects" class="section">
+<section id="projects" class="section reveal">
     <h2>Projects</h2>
-    <div class="card">AI4A Project</div>
-    <div class="card">Design Thinking Project</div>
-    <div class="card">ACE Project</div>
-</section>
-
-<section id="gallery" class="section">
-    <h2>Gallery</h2>
-    <div class="gallery">
-        <img src="images/img1.jpg">
-        <img src="images/img2.jpg">
-        <img src="images/img3.jpg">
+    <div class="cards">
+        <div class="card">AI4A Project</div>
+        <div class="card">Design Thinking Project</div>
+        <div class="card">ACE Project</div>
     </div>
 </section>
 
-<section id="contact" class="section">
+<section id="gallery" class="section reveal">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="images/img1.jpg" onclick="openLightbox(this)">
+        <img src="images/img2.jpg" onclick="openLightbox(this)">
+        <img src="images/img3.jpg" onclick="openLightbox(this)">
+    </div>
+</section>
+
+<section id="contact" class="section reveal">
     <h2>Contact</h2>
     <p>Email: your@email.com</p>
 </section>
 
-<script src="script.js"></script>
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
