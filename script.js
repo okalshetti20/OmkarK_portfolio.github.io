@@ -9,7 +9,6 @@ function type() {
     }
 }
 type();
-
 // Cursor
 document.addEventListener("mousemove", e => {
     document.querySelector(".cursor").style.top = e.clientY + "px";
