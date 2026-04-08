@@ -2,84 +2,87 @@ body {
     margin: 0;
     font-family: Arial;
     color: white;
-    overflow-x: hidden;
     background: linear-gradient(270deg, #0f172a, #1e3a8a, #9333ea);
     background-size: 600% 600%;
     animation: gradientBG 10s ease infinite;
+    scroll-behavior: smooth;
 }
-/* Gradient animation */
+
+/* Background animation */
 @keyframes gradientBG {
     0% {background-position: 0%}
     50% {background-position: 100%}
     100% {background-position: 0%}
 }
 
-/* Cursor */
-.cursor {
-    width: 20px;
-    height: 20px;
-    background: #38bdf8;
-    position: fixed;
-    border-radius: 50%;
-    pointer-events: none;
-    mix-blend-mode: difference;
-}
-
-/* Navbar */
+/* Navbar upgrade */
 nav {
     position: fixed;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
-    backdrop-filter: blur(15px);
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
 }
 
 /* Sections */
-.section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+section {
+    padding: 100px 20px;
+    text-align: center;
 }
 
-/* Cards */
-.cards {
-    display: flex;
-    gap: 20px;
-}
-
+/* Glass cards */
 .card {
-    padding: 20px;
     background: rgba(255,255,255,0.1);
-    border-radius: 20px;
+    padding: 20px;
+    margin: 15px auto;
+    width: 60%;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
     transition: 0.4s;
 }
 
 .card:hover {
-    transform: scale(1.1) rotate(2deg);
+    transform: translateY(-10px) scale(1.05);
 }
 
-/* Gallery */
+/* Gallery grid */
 .gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
+    padding: 20px;
 }
 
 .gallery img {
-    width: 200px;
+    width: 100%;
+    border-radius: 10px;
     transition: 0.4s;
+    cursor: pointer;
 }
 
 .gallery img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #38bdf8;
 }
 
-/* Reveal */
+/* Scroll animation */
 .reveal {
     opacity: 0;
-    transform: translateY(80px);
+    transform: translateY(60px);
     transition: 1s;
 }
 
@@ -94,7 +97,7 @@ nav {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: black;
+    background: rgba(0,0,0,0.9);
     justify-content: center;
     align-items: center;
 }
