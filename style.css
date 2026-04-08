@@ -1,91 +1,105 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial;
-}
-
 body {
+    margin: 0;
+    font-family: Arial;
     background: #0f172a;
     color: white;
+    scroll-behavior: smooth;
 }
 
-nav {
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 15px 30px;
-    background: #020617;
-    position: sticky;
-    top: 0;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
 }
 
-nav ul {
+.navbar ul {
     display: flex;
     list-style: none;
 }
 
-nav ul li {
+.navbar li {
     margin: 0 10px;
 }
 
-nav a {
+.navbar a {
     color: white;
     text-decoration: none;
 }
 
+/* Sections */
 .section {
-    padding: 60px;
+    padding: 100px 20px;
     text-align: center;
-    animation: fadeIn 1s ease;
 }
 
-.profile {
-    width: 150px;
-    border-radius: 50%;
+/* Cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .card {
-    background: #1e293b;
-    margin: 10px auto;
-    padding: 15px;
-    width: 60%;
-    border-radius: 10px;
-    transition: 0.3s;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px) scale(1.05);
 }
 
+/* Gallery */
 .gallery {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .gallery img {
-    width: 150px;
+    width: 200px;
     border-radius: 10px;
-    transition: 0.3s;
+    transition: 0.4s;
+    cursor: pointer;
 }
 
 .gallery img:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 20px #38bdf8;
 }
 
-button {
-    background: #38bdf8;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
+/* Lightbox */
+#lightbox {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+#lightbox img {
+    max-width: 80%;
 }
 
-.dark {
-    background: white;
-    color: black;
+/* Scroll Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
