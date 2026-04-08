@@ -1,4 +1,13 @@
-// Typing effect
+// Scroll Reveal
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".reveal").forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+});
+
+// Typing Effect
 let text = "Omkar Kalshetti";
 let i = 0;
 function type() {
@@ -9,20 +18,6 @@ function type() {
     }
 }
 type();
-// Cursor
-document.addEventListener("mousemove", e => {
-    document.querySelector(".cursor").style.top = e.clientY + "px";
-    document.querySelector(".cursor").style.left = e.clientX + "px";
-});
-
-// Scroll reveal
-window.addEventListener("scroll", () => {
-    document.querySelectorAll(".reveal").forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-            el.classList.add("active");
-        }
-    });
-});
 
 // Lightbox
 function openLightbox(img) {
