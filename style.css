@@ -15,7 +15,18 @@ body {
     100% {background-position: 0%}
 }
 
-/* Navbar upgrade */
+/* Cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    background: #38bdf8;
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+
+/* Navbar */
 nav {
     position: fixed;
     width: 100%;
@@ -27,10 +38,18 @@ nav {
     z-index: 1000;
 }
 
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
     transition: 0.3s;
 }
 
@@ -39,16 +58,39 @@ nav a:hover {
 }
 
 /* Sections */
-section {
-    padding: 100px 20px;
-    text-align: center;
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Glass cards */
+/* Hero */
+.subtitle {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #38bdf8;
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Cards */
 .card {
     background: rgba(255,255,255,0.1);
     padding: 20px;
-    margin: 15px auto;
+    margin: 10px;
     width: 60%;
     border-radius: 15px;
     backdrop-filter: blur(10px);
@@ -56,15 +98,15 @@ section {
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
 }
 
-/* Gallery grid */
+/* Gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
-    padding: 20px;
+    width: 80%;
 }
 
 .gallery img {
@@ -79,7 +121,7 @@ section {
     box-shadow: 0 0 20px #38bdf8;
 }
 
-/* Scroll animation */
+/* Reveal animation */
 .reveal {
     opacity: 0;
     transform: translateY(60px);
